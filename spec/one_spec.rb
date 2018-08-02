@@ -1,5 +1,5 @@
 describe "one" do
   it "one" do
-    expect(1).to eq(2)
+    expect(1).to eq(1)
   end
 end
