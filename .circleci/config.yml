@@ -8,4 +8,5 @@ jobs:
       - run: gem update --system --no-rdoc --no-ri
       - run: gem install bundler -v 1.16.3 --no-rdoc --no-ri
       - checkout
-      - run: echo "hello world"
+      - run: bundle install --path=vendor/bundle --jobs=4 --retry=3 --local
+      - run: bundle exec rspec
