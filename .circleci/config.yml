@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4
+      - image: circleci/ruby:2.4.4
     steps:
       - run: sudo apt-get update
       - run: gem update --system --no-rdoc --no-ri
