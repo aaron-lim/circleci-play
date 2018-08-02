@@ -2,7 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4
+      - image: circleci/ruby:2.4.4
     steps:
+      - run: sudo apt-get update
+      - run: gem update --system --no-rdoc --no-ri
+      - run: gem install bundler -v 1.16.3 --no-rdoc --no-ri
       - checkout
-      - run: echo "hello world"
+      - run: bundle install
+      - run: bundle exec rspec
